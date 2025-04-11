@@ -1,6 +1,5 @@
 
----
-title: "Análisis de Propiedades Inmobiliarias"
+"Análisis de Propiedades Inmobiliarias"
 output: html_document
 ---
 
