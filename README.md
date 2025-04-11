@@ -1,7 +1,4 @@
 
-"Análisis de Propiedades Inmobiliarias"
-output: html_document
----
 
 ## Alcance del Proyecto
 
