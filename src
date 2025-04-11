@@ -1,1 +1,14 @@
+import pandas as pd
+from sqlalchemy import create_engine
 
+# Extracción
+df = pd.read_csv('datos_propiedades.csv')
+
+# Transformación
+df.drop_duplicates(subset='Serial Number', inplace=True)
+df['Date Recorded'] = pd.to_datetime(df['Date Recorded'])
+df.fillna(df.median(numeric_only=True), inplace=True)
+
+# Carga
+engine = create_engine('sqlite:///propiedades.db')
+df.to_sql('propiedades', con=engine, if_exists='replace', index=False)
